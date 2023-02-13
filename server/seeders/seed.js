@@ -14,11 +14,18 @@ db.once('open', async () => {
     const projects = await Project.insertMany(projectSeeds);
     const bugs = await Bug.insertMany(bugSeeds);
 
+let count = 0;
+
     for (let newProject of projects) {
       // assigns projects to random user
-      const tempUser = users[Math.floor(Math.random() * users.length)];
+      const tempUser = users[count];
       tempUser.project.push(newProject._id);
       await tempUser.save();
+      count++;
+      
+      // adds users to project model
+      newProject.user.push(tempUser._id);
+      await newProject.save();
 
       // assigns bugs to random project
       const tempBug = bugs[Math.floor(Math.random() * bugs.length)];
@@ -29,9 +36,8 @@ db.once('open', async () => {
       tempBug.assignedUser.push(tempUser._id);
       await tempBug.save();
 
-      // adds users to project model
-      newProject.user.push(tempUser._id);
-      await newProject.save();
+      console.log(tempUser);
+      console.log(newProject);
     }
   } catch (err) {
     console.error(err);
@@ -39,3 +45,5 @@ db.once('open', async () => {
   }
   process.exit(0);
 });
+
+

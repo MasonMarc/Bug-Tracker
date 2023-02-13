@@ -8,12 +8,12 @@ const bugSchema = new Schema(
       trim: true
     },
     // created date
-    assignedUser: [
+    assignedUser: 
       {
         type: Schema.Types.ObjectId,
         ref: 'User'
-      }
-    ]
+      },
+    
   }
 );
 

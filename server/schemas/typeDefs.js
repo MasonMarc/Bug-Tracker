@@ -12,7 +12,7 @@ const typeDefs = gql`
   type Project {
     _id: ID
     name: String
-    user: User
+    user: [User]
     bugs: [Bug]
   }
 

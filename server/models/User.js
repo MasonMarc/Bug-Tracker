@@ -19,12 +19,12 @@ const userSchema = new Schema({
     required: true,
     minlength: 5,
   },
-  project: [
+  project: 
     {
       type: Schema.Types.ObjectId,
       ref: 'Project'
-    }
-  ]
+    },
+  
 });
 
 userSchema.pre('save', async function (next) {
