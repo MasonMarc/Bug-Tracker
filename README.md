@@ -1,2 +1,3 @@
-# Bug-Tracker
-Bug Tracking react app using MERN stack
+# Apollo Mern Mongo
+
+Boilerplate code to setup a MERN Apollo Server/Client Application using a Mongo database

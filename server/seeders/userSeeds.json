@@ -1,0 +1,42 @@
+[
+  {
+    "username": "testuser",
+    "email": "test@user.com",
+    "password": "password1234"
+  },
+  {
+    "username": "Katelyn",
+    "email": "katelynclay@ezent.com",
+    "password": "Pennington"
+  },
+  {
+    "username": "Jan",
+    "email": "janpennington@ezent.com",
+    "password": "Perry"
+  },
+  {
+    "username": "Hess",
+    "email": "hessperry@ezent.com",
+    "password": "Mejia"
+  },
+  {
+    "username": "Juliana",
+    "email": "julianamejia@ezent.com",
+    "password": "Soto1"
+  },
+  {
+    "username": "Sarah",
+    "email": "sarahsoto@ezent.com",
+    "password": "Curry"
+  },
+  {
+    "username": "Tonia",
+    "email": "toniacurry@ezent.com",
+    "password": "Tanner"
+  },
+  {
+    "username": "Gill",
+    "email": "gilltanner@ezent.com",
+    "password": "Rush1"
+  }
+]

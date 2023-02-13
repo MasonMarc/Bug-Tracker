@@ -1,0 +1,23 @@
+[
+  {
+    "name": "Runtime error"
+  },
+  {
+    "name": "Logic error"
+  },
+  {
+    "name": "Compliation error"
+  },
+  {
+    "name": "Syntax error"
+  },
+  {
+    "name": "Interface error"
+  },
+  {
+    "name": "Resource error"
+  },
+  {
+    "name": "Artihmetic error"
+  }
+]
