@@ -74,6 +74,7 @@ const resolvers = {
       const user = await User.updateOne({_id: args.user}, {$push: {projects: newProject._id}});
       return newProject;
     },
+    // add user to project
     assignUsertoProject: async (_, args) => {
       return await Project.updateOne({_id: args.project}, {$push: {user: args.user}});
     },
@@ -83,13 +84,18 @@ const resolvers = {
       const project = await Project.updateOne({_id: args.project}, {$push: {bugs: newBug._id}});
       return newBug;
     },
-    // delete bug
     // edit bug
     editBug: async (_, args) => {
       return await Bug.updateOne({_id: args.bug}, {$set: {description: args.description}});
-    }
+    },
+    // delete bug
+    deleteBug: async (_, args) => {
+      return await Bug.findByIdAndDelete({_id: args.bug});
+    },
     // delete project
-    // add user to project
+    deleteProject: async (_, args) => {
+      return await Project.findByIdAndDelete({_id: args.project});
+    },
 
   }
 };

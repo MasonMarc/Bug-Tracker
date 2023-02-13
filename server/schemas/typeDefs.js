@@ -44,6 +44,8 @@ const typeDefs = gql`
     addBug(name: String!, description: String!, project: ID!): Bug
     assignUsertoProject(project: ID!, user: ID!): Project
     editBug(description: String!, bug: ID!): Bug
+    deleteBug(bug: ID!): Bug
+    deleteProject(project: ID!): Project
   }
 `;
 
