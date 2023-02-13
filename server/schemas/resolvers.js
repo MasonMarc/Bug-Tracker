@@ -26,14 +26,14 @@ const resolvers = {
       });
     },
     users: async () => {
-      return User.find().populate('project');
+      return User.find().populate('projects');
     },
     user: async (_, args) => {
-      return User.findOne({ _id: args.id }).populate('project');
+      return User.findOne({ _id: args.id }).populate('projects');
     },
     me: async (_, _args, context) => {
       if (context.user) {
-        return User.findOne({ _id: context.user._id }).populate('project');
+        return User.findOne({ _id: context.user._id }).populate('projects');
       }
       throw new AuthenticationError('You need to be logged in!');
     },
@@ -67,7 +67,30 @@ const resolvers = {
       const token = signToken(user);
 
       return { token, user };
+    },
+    // add project
+    addProject: async (_, args) => {
+      const newProject = await Project.create(args);
+      const user = await User.updateOne({_id: args.user}, {$push: {projects: newProject._id}});
+      return newProject;
+    },
+    assignUsertoProject: async (_, args) => {
+      return await Project.updateOne({_id: args.project}, {$push: {user: args.user}});
+    },
+    // add bug
+    addBug: async (_, args) => {
+      const newBug = await Bug.create(args);
+      const project = await Project.updateOne({_id: args.project}, {$push: {bugs: newBug._id}});
+      return newBug;
+    },
+    // delete bug
+    // edit bug
+    editBug: async (_, args) => {
+      return await Bug.updateOne({_id: args.bug}, {$set: {description: args.description}});
     }
+    // delete project
+    // add user to project
+
   }
 };
 

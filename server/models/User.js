@@ -19,11 +19,12 @@ const userSchema = new Schema({
     required: true,
     minlength: 5,
   },
-  project: 
+  projects: [
     {
       type: Schema.Types.ObjectId,
       ref: 'Project'
-    },
+    }
+  ],
   
 });
 

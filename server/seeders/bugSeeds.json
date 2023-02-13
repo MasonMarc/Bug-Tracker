@@ -1,23 +1,30 @@
 [
   {
-    "name": "Runtime error"
+    "name": "Runtime error",
+    "description": "lorem ipsum"
   },
   {
-    "name": "Logic error"
+    "name": "Logic error",
+    "description": "lorem ipsum"
   },
   {
-    "name": "Compliation error"
+    "name": "Compliation error",
+    "description": "lorem ipsum"
   },
   {
-    "name": "Syntax error"
+    "name": "Syntax error",
+    "description": "lorem ipsum"
   },
   {
-    "name": "Interface error"
+    "name": "Interface error",
+    "description": "lorem ipsum"
   },
   {
-    "name": "Resource error"
+    "name": "Resource error",
+    "description": "lorem ipsum"
   },
   {
-    "name": "Artihmetic error"
+    "name": "Artihmetic error",
+    "description": "lorem ipsum"
   }
 ]

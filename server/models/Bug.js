@@ -7,13 +7,23 @@ const bugSchema = new Schema(
       required: true,
       trim: true
     },
+    description: {
+      type: String,
+      required: true,
+      trim: true
+    },
     // created date
-    assignedUser: 
+    assignedUser: [
       {
         type: Schema.Types.ObjectId,
         ref: 'User'
       },
-    
+    ],
+    project: 
+      {
+        type: Schema.Types.ObjectId,
+        ref: 'Project'
+      },
   }
 );
 
