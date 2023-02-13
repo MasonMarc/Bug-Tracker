@@ -14,10 +14,10 @@ db.once('open', async () => {
     const projects = await Project.insertMany(projectSeeds);
     const bugs = await Bug.insertMany(bugSeeds);
 
-    for (newProject of projects) {
+    for (let newProject of projects) {
       // assigns projects to random user
       const tempUser = users[Math.floor(Math.random() * users.length)];
-      tempUser.projects.push(newProject._id);
+      tempUser.project.push(newProject._id);
       await tempUser.save();
 
       // assigns bugs to random project
@@ -26,12 +26,12 @@ db.once('open', async () => {
       await newProject.save();
 
       // adds users to bug model
-      tempBug.users.push(newUser._id);
+      tempBug.assignedUser.push(tempUser._id);
       await tempBug.save();
 
       // adds users to project model
-      tempUser.projects.push(newUser._id);
-      await tempProject.save();
+      newProject.user.push(tempUser._id);
+      await newProject.save();
     }
   } catch (err) {
     console.error(err);

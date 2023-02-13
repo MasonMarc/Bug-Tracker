@@ -13,7 +13,7 @@ const typeDefs = gql`
     _id: ID
     name: String
     user: User
-    bugs: [bugs]
+    bugs: [Bug]
   }
 
   type Bug {
