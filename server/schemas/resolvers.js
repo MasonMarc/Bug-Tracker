@@ -69,9 +69,12 @@ const resolvers = {
       return { token, user };
     },
     // add project
-    addProject: async (_, args) => {
-      const newProject = await Project.create(args);
-      const user = await User.updateOne({_id: args.user}, {$push: {projects: newProject._id}});
+    addProject: async (_, args, context) => {
+      if (!context.user){
+        throw new AuthenticationError('You need to be logged in!');
+      }
+      const newProject = await Project.create({...args, user: context.user._id});
+      const user = await User.updateOne({_id: context.user._id}, {$push: {projects: newProject._id}});
       return newProject;
     },
     // add user to project
@@ -95,6 +98,7 @@ const resolvers = {
     // delete project
     deleteProject: async (_, args) => {
       return await Project.findByIdAndDelete({_id: args.project});
+      // add functionality to delete all bugs associated
     },
 
   }

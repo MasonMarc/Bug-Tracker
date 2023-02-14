@@ -12,6 +12,7 @@ import Home from './pages/Home';
 import Signup from './pages/Signup';
 import Login from './pages/Login';
 import Profile from './pages/Profile';
+import Projects from './pages/Projects';
 import Header from './components/Header';
 import Footer from './components/Footer';
 
@@ -43,10 +44,12 @@ function App() {
   return (
     <ApolloProvider client={client}>
       <Router>
+        {/* add navbar */}
         <>
           <Header />
           <Routes>
             <Route path="/" element={<Home />} />
+            <Route path='/projects' element={<Projects />} />
             <Route path="/login" element={<Login />} />
             <Route path="/signup" element={<Signup />} />
             <Route path="/me" element={<Profile />} />

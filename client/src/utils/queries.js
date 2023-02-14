@@ -39,3 +39,30 @@ export const QUERY_ME = gql`
     }
   }
 `;
+
+export const QUERY_PROJECTS = gql`
+  query projects {
+    projects {
+      _id
+      name
+      user{
+      _id
+      }
+      bugs{
+      _id
+      }
+    }
+  }
+`;
+
+export const QUERY_BUGS = gql`
+  query bugs {
+    bugs {
+      _id
+      name
+      description
+      assignedUser
+      project
+    }
+  }
+`;

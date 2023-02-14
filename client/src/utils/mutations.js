@@ -23,3 +23,12 @@ export const ADD_USER = gql`
     }
   }
 `;
+
+export const ADD_PROJECT = gql`
+  mutation addProject($name: String!) {
+    addProject(name: $name) {
+      _id
+      name
+  }
+  }
+`;
