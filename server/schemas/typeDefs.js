@@ -21,6 +21,7 @@ const typeDefs = gql`
     name: String
     description: String
     assignedUser: User
+    project: Project
   }
 
   type Auth {
@@ -34,14 +35,15 @@ const typeDefs = gql`
     searchUsers(term: String!): [User]!
     me: User
     projects: [Project]!
-    bugs: [Bug]!
+    oneProject(id: ID!): Project
+    projectBugs(id: ID!): [Bug]!
   }
 
   type Mutation {
     addUser(email:String!, username:String!, password:String!): Auth
     login(email:String!, password:String!): Auth
     addProject(name: String!): Project
-    addBug(name: String!, description: String!, project: ID!): Bug
+    addBug(projectId: ID!, name: String!, description: String): Bug
     assignUsertoProject(project: ID!, user: ID!): Project
     editBug(description: String!, bug: ID!): Bug
     deleteBug(bug: ID!): Bug

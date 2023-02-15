@@ -51,10 +51,13 @@ const Profile = () => {
 
   const renderCurrentUserInfo = () => {
     if (id) return null;
+    console.log(user.projects);
+    if (error) return <p>Something went wrong</p>;
     return (
       <ul>
         <li>username: {user.username}</li>
         <li>email: {user.email}</li>
+        <li>projects: [user.projects]</li>
       </ul>
     );
   }

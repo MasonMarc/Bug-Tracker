@@ -9,21 +9,8 @@ const bugSchema = new Schema(
     },
     description: {
       type: String,
-      required: true,
       trim: true
     },
-    // created date
-    assignedUser: [
-      {
-        type: Schema.Types.ObjectId,
-        ref: 'User'
-      },
-    ],
-    project: 
-      {
-        type: Schema.Types.ObjectId,
-        ref: 'Project'
-      },
   }
 );
 

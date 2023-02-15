@@ -29,6 +29,26 @@ export const ADD_PROJECT = gql`
     addProject(name: $name) {
       _id
       name
+    }
   }
+`;
+
+export const ADD_BUG = gql`
+  mutation addBug($projectId: ID!, $name: String!, $description: String) {
+    addBug(projectId: $projectId, name: $name, description: $description) {
+      _id
+      name
+      description
+    }
+  }
+`;
+
+export const DEL_BUG = gql`
+  mutation delBug($name: String!) {
+    addBug(name: $name, description: $description) {
+      _id
+      name
+      description
+    }
   }
 `;

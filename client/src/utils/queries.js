@@ -36,6 +36,9 @@ export const QUERY_ME = gql`
       _id
       username
       email
+        projects {
+        name
+      }
     }
   }
 `;
@@ -45,24 +48,46 @@ export const QUERY_PROJECTS = gql`
     projects {
       _id
       name
-      user{
-      _id
+      user {
+        _id
       }
-      bugs{
-      _id
+      bugs {
+        _id
       }
     }
   }
 `;
 
-export const QUERY_BUGS = gql`
-  query bugs {
+export const QUERY_ONE_PROJECT = gql`
+  query oneProject {
+    _id
+    name
+    user {
+      _id
+      name
+    }
     bugs {
       _id
       name
       description
-      assignedUser
-      project
+    }
+  }
+`;
+
+export const QUERY_BUGS = gql`
+  query projectBugs($id: ID!) {
+    projectBugs(id: $id) {
+      _id
+      name
+      description
+      assignedUser {
+        _id
+        username
+      }
+      project {
+        _id
+        name
+      }
     }
   }
 `;

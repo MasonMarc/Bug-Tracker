@@ -40,8 +40,13 @@ const resolvers = {
     projects: async () => {
       return await Project.find({}).populate('bugs').populate('user')
     },
-    bugs: async () => {
-      return await Bug.find({}).populate('assignedUser')
+    // set up get one project by id by args
+    oneProject: async (_, args) => {
+      return await Project.findById({ _id: args.id }).populate('bugs').populate('user')
+    },
+    projectBugs: async (_, args, context) => {
+      const project = await Project.findById(args.id).sort({ _id: 1 }).populate('bugs')
+      return project?.bugs || []
     },
   },
 
@@ -82,9 +87,19 @@ const resolvers = {
       return await Project.updateOne({_id: args.project}, {$push: {user: args.user}});
     },
     // add bug
-    addBug: async (_, args) => {
+    addBug: async (_, args, context) => {
+      if (!context.user){
+        throw new AuthenticationError('You need to be logged in!');
+      }
       const newBug = await Bug.create(args);
-      const project = await Project.updateOne({_id: args.project}, {$push: {bugs: newBug._id}});
+      // add functionality for current project page to be added project
+      console.log('PROJECT_ID', args);
+      
+      await Project.findOneAndUpdate(
+        {_id: args.projectId}, 
+        {$addToSet: { bugs: newBug._id }},
+        {new: true}
+      );
       return newBug;
     },
     // edit bug

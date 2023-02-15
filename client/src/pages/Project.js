@@ -1,15 +1,19 @@
 // Node Modules
 import React from 'react';
 import { useQuery } from '@apollo/client';
+import { useParams } from 'react-router-dom';
 // Utilities
-import { QUERY_PROJECTS } from '../utils/queries';
+import { QUERY_BUGS } from '../utils/queries';
 // Components
-import ProjectList from '../components/ProjectList';
-import ProjectForm from '../components/ProjectForm';
+import BugList from '../components/BugList';
+import BugForm from '../components/BugForm';
 
-const Projects = () => {
-  const { loading, data } = useQuery(QUERY_PROJECTS);
-  const projects = data?.projects || [];
+const Project = () => {
+  const { id } = useParams();
+  const { loading, data } = useQuery(QUERY_BUGS, {
+    variables: { id }
+  });
+  const bugs = data?.projectBugs || [];
 
   return (
     <main>
@@ -18,16 +22,16 @@ const Projects = () => {
           className="col-12 col-md-10 mb-3 p-3"
           style={{ border: '1px dotted #1a1a1a' }}
         >
-          <ProjectForm />
+          <BugForm />
         </div>
 
         <div className="col-12 col-md-10 my-3">
           {loading ? (
             <div>Loading...</div>
           ) : (
-            <ProjectList
-              projects={projects}
-              title="projects currently active..."
+            <BugList
+              bugs={bugs}
+              title="bugs currently active..."
             />
           )}
         </div>
@@ -38,4 +42,4 @@ const Projects = () => {
 
 // add functionality for project id: page to display all bugs with that project id and bug add form
 
-export default Projects;
+export default Project;
