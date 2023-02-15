@@ -44,8 +44,8 @@ export const ADD_BUG = gql`
 `;
 
 export const DEL_BUG = gql`
-  mutation delBug($name: String!) {
-    addBug(name: $name, description: $description) {
+  mutation deleteBug($name: String!) {
+    deleteBug(name: $name) {
       _id
       name
       description

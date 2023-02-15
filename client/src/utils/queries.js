@@ -80,14 +80,7 @@ export const QUERY_BUGS = gql`
       _id
       name
       description
-      assignedUser {
-        _id
-        username
-      }
-      project {
-        _id
-        name
-      }
+      createdAt
     }
   }
 `;

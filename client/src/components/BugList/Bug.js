@@ -1,4 +1,18 @@
 
+// const deleteBug = async (bug) => {
+//     try {
+//       const { data } = await deleteBug({
+//         variables: { bug },
+//       });
+//     } catch (err) {
+//       console.error(err);
+//     }
+//   };
+
+//   if (!bugs.length) {
+//     return <h3>No Bugs Yet</h3>;
+//   }
+
 
 const Bug = ({ _id, name, description }) => {
     return (
@@ -8,11 +22,12 @@ const Bug = ({ _id, name, description }) => {
             </h4>
             <p>{description}</p>
 
-            <button className='btn btn-warning'>Delete Bug</button>
+            <button className='btn btn-warning'
+            // onClick={() => deleteBug(bug)}
+            >Delete Bug</button>
         </div>
     );
 };
-
 
 
 export default Bug;

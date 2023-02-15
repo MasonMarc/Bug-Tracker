@@ -47,7 +47,10 @@ const Signup = () => {
       )
     } 
     return (
+    <main className='form-signin w-100 m-auto text-center p-5'>
+      <h2 className='h3 mb-3 fw-normal'>Please Sign Up</h2>
       <form onSubmit={handleFormSubmit}>
+      <div className='form-floating p-1'>
         <input
           placeholder="Your username"
           name="username"
@@ -55,6 +58,8 @@ const Signup = () => {
           value={formState.name}
           onChange={handleChange}
         />
+      </div>
+      <div className='form-floating p-1'>
         <input
           placeholder="Your email"
           name="email"
@@ -62,6 +67,8 @@ const Signup = () => {
           value={formState.email}
           onChange={handleChange}
         />
+      </div>
+      <div className='form-floating p-1'>
         <input
           placeholder="******"
           name="password"
@@ -69,16 +76,22 @@ const Signup = () => {
           value={formState.password}
           onChange={handleChange}
         />
-        <button type="submit">
+      </div>
+      <div className='p-1'>
+      <Link to="/login">
+        Click here to Login Instead
+      </Link>
+      </div>
+        <button type="submit" className=' w-40 btn btn-lg btn-primary'>
           Submit
         </button>
       </form>
+    </main>
     );
   };
 
   return (
     <main>
-      <h4>Sign Up</h4>
       <div>
         {renderForm()}
         {error && <div>{error.message}</div>}
