@@ -24,11 +24,11 @@ const ProjectList = ({ projects, title }) => {
     return projects.map(project => <Project key={project._id} {...project} />);
   }
   return (
-    <>
+    <main className='form-signin w-100 m-auto text-center p-5'>
       <h4 className="card-header bg-dark text-light p-2 m-0"> {title}
       </h4>
       {renderProjects()}
-    </>
+    </main>
 
   );
 };

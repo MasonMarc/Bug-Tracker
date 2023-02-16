@@ -37,13 +37,14 @@ const ProjectForm = () => {
 
 
     return (
-        <div className='p-3'>
+        
+        <main className='form-signin w-100 m-auto p-5'>
             <h3>Add a Project</h3>
             <form
                 className="flex-row justify-center justify-space-between-md align-center"
                 onSubmit={handleFormSubmit}
             >
-                <div className="col-12 col-lg-9 form-floating p-1">
+                <div className="col-9 col-lg-6 form-floating p-1">
                     <input
                         name='name'
                         placeholder="Add your Project name..."
@@ -63,7 +64,7 @@ const ProjectForm = () => {
                     </div>
                 )}
             </form>
-        </div>
+        </main>
     );
 };
 

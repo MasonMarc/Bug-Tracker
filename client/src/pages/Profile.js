@@ -53,21 +53,32 @@ const Profile = () => {
     if (id) return null;
     console.log(user.projects);
     if (error) return <p>Something went wrong</p>;
+    if(user.projects[0]){
     return (
-      <div className='card w-25'>
+      <div className='card w-25 p-5 m-auto'>
+        <h3>username: {user.username}</h3>
       <ul className=''>
-        <li>username: {user.username}</li>
         <li>email: {user.email}</li>
-        <li>projects: [user.projects]</li>
+        <li>projects: {user.projects[0].name}</li>
       </ul>
       </div>
     );
+    } 
+    return (
+      <div className='card w-25 p-5 m-auto'>
+        <h3>username: {user.username}</h3>
+      <ul className=''>
+        <li>email: {user.email}</li>
+        <li>No projects yet!</li>
+      </ul>
+      </div>
+    )
   }
 
   return (
     <div>
       <div>
-        <h2>
+        <h2 className='m-auto p-5 text-center'>
           Viewing {id ? `${user.username}'s` : 'your'} profile.
         </h2>
         {renderCurrentUserInfo()}
