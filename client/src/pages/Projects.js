@@ -14,7 +14,7 @@ const Projects = () => {
   
   return (
     <main>
-      <div className="flex-row justify-center">
+      <div className="flex-row justify-center w-100">
         <div
           className="col-12 col-md-10 mb-3 p-3"
           style={{ border: '1px dotted #1a1a1a' }}
@@ -22,7 +22,7 @@ const Projects = () => {
           <ProjectForm />
         </div>
 
-        <div className="col-12 col-md-10 my-3">
+        <div className="col-12 col-md-10 my-3 w-100">
           {loading ? (
             <div>Loading...</div>
           ) : (

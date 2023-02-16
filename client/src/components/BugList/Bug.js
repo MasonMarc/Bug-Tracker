@@ -1,20 +1,45 @@
+import { useMutation } from '@apollo/client';
+import { DEL_BUG } from '../../utils/mutations';
+import { QUERY_BUGS } from '../../utils/queries';
 
-// const deleteBug = async (bug) => {
-//     try {
-//       const { data } = await deleteBug({
-//         variables: { bug },
-//       });
-//     } catch (err) {
-//       console.error(err);
-//     }
-//   };
-
-//   if (!bugs.length) {
-//     return <h3>No Bugs Yet</h3>;
-//   }
 
 
 const Bug = ({ _id, name, description }) => {
+
+    const [deleteBug, { error }] = useMutation(DEL_BUG, {
+        // update(cache, { data: { deleteBug } }) {
+        //     try {
+
+        //         const { projectBugs } = cache.readQuery({ query: QUERY_BUGS })
+
+        //         cache.writeQuery({
+        //             query: QUERY_BUGS,
+        //             data: {
+        //                 projectBugs: projectBugs.filter(function (bug) {
+        //                     if (bug._id !== deleteBug._id) {
+        //                         return bug;
+        //                     }
+        //                 })
+        //             },
+        //         });
+        //     } catch (error) {
+        //         console.error(error);
+        //     }
+        // }
+    })
+
+    const handleDelete = async (bug) => {
+        try {
+            const { data } = await deleteBug({
+                variables: { id: bug },
+            });
+        } catch (error) {
+            console.error(error);
+        }
+        window.location.reload();
+    };
+    
+    console.log(_id);
     return (
         <div key={_id} className="card p-3">
             <h4>
@@ -23,7 +48,7 @@ const Bug = ({ _id, name, description }) => {
             <p>{description}</p>
 
             <button className='btn btn-warning'
-            // onClick={() => deleteBug(bug)}
+                onClick={() => handleDelete(_id)}
             >Delete Bug</button>
         </div>
     );

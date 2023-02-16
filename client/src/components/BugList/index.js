@@ -3,7 +3,7 @@ import Bug from './Bug';
 
 const BugList = ({ bugs, title }) => {
   if (!bugs.length) {
-    return <h3>No Bugs Yet</h3>;
+    return <h3 className='m-auto text-center'>No Bugs Yet!</h3>;
   }
 
   console.log('BUGS', bugs);

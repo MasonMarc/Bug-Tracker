@@ -59,7 +59,9 @@ const Profile = () => {
         <h3>username: {user.username}</h3>
       <ul className=''>
         <li>email: {user.email}</li>
-        <li>projects: {user.projects[0].name}</li>
+        <li>Projects:<ul> {user.projects.map( (project) => {
+          return <li>{project.name}</li>;
+        })}</ul></li>
       </ul>
       </div>
     );

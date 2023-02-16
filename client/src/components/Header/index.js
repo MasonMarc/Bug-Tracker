@@ -4,17 +4,7 @@ import Navbar from '../Navbar';
 
 const Header = () => {
   return (
-    <header>
-      {/* <div>
-        <Link to="/me">
-          <h1>Profile</h1>
-        </Link>
-      </div>
-      <div>
-        <Link to="/projects">
-          <h1>Projects</h1>
-        </Link>
-      </div> */}
+    <header className='w-100'>
       <div className="w-100">
         <Navbar />
       </div>
