@@ -15,7 +15,7 @@ const Header = () => {
           <h1>Projects</h1>
         </Link>
       </div> */}
-      <div>
+      <div className="w-100">
         <Navbar />
       </div>
     </header>

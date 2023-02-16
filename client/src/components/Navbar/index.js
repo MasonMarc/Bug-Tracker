@@ -11,10 +11,10 @@ function Navbar() {
 
   if (Auth.loggedIn()) {
     return (
-      <div className='container'>
+      <div className='container w-100'>
         <header className='d-flex flex-wrap justify-content-space-between  align-items-center py-3 mb-4 border-bottom'>
           <a className='d-flex align-items-center mb-3 mb-md-0 me-md-auto text-dark text-decoration-none'>
-          <img src="/assets/pngaaa.com-134584(1).png" alt="Logo - Mantis Logo@seekpng.com" width={300}></img>
+            <img src="/assets/pngaaa.com-134584(1).png" alt="Logo - Mantis Logo@seekpng.com" width={300}></img>
           </a>
           <ul className='nav nav-pills'>
             <li className='nav-item'>
@@ -27,7 +27,7 @@ function Navbar() {
                 <h1>Projects</h1>
               </Link>
             </li>
-            <li className='nav-item' className='nav-link'>
+            <li className='nav-item'>
               <button className=' w-40 btn btn-lg btn-primary'
                 onClick={logout}>
                 Logout
@@ -42,19 +42,30 @@ function Navbar() {
   // If logged out show login controls
   return (
     <>
-      <div>
-        <Link to="/login">
-          <h1>Profile</h1>
-        </Link>
+      <div className='container w-100'>
+        <header className='d-flex flex-wrap justify-content-space-between  align-items-center py-3 mb-4 border-bottom'>
+          <a className='d-flex align-items-center mb-3 mb-md-0 me-md-auto text-dark text-decoration-none'>
+            <img src="/assets/pngaaa.com-134584(1).png" alt="Logo - Mantis Logo@seekpng.com" width={300}></img>
+          </a>
+          <ul className='nav nav-pills'>
+            <li className='nav-item'>
+              <Link to="/login" className='nav-link'>
+                <h1>Profile</h1>
+              </Link>
+            </li>
+            <li className='nav-item'>
+              <Link to="/login" className='nav-link'>
+                <h1>Projects</h1>
+              </Link>
+            </li>
+            <li className='nav-item'>
+            <Link to="/login" className='nav-link'>
+              <h1>Login</h1>
+            </Link>
+            </li>
+          </ul>
+        </header>
       </div>
-      <div>
-        <Link to="/login">
-          <h1>Projects</h1>
-        </Link>
-      </div>
-      <Link to="/login" className='h1 p-1'>
-        Login
-      </Link>
     </>
   )
 }

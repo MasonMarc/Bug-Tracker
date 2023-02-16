@@ -46,7 +46,7 @@ const BugForm = () => {
 
 
     return (
-        <div>
+        <div className='p-3 m-auto d-block'>
             <h3>Add a Bug</h3>
             <p
                 className={`m-0 ${characterCount === 280 || error ? 'text-danger' : ''

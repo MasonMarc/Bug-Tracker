@@ -54,11 +54,13 @@ const Profile = () => {
     console.log(user.projects);
     if (error) return <p>Something went wrong</p>;
     return (
-      <ul>
+      <div className='card w-25'>
+      <ul className=''>
         <li>username: {user.username}</li>
         <li>email: {user.email}</li>
         <li>projects: [user.projects]</li>
       </ul>
+      </div>
     );
   }
 
@@ -69,7 +71,6 @@ const Profile = () => {
           Viewing {id ? `${user.username}'s` : 'your'} profile.
         </h2>
         {renderCurrentUserInfo()}
-        {renderUserList()}
       </div>
     </div>
   );

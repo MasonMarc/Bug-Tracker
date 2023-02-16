@@ -37,7 +37,7 @@ const ProjectForm = () => {
 
 
     return (
-        <div>
+        <div className='p-3'>
             <h3>Add a Project</h3>
             <form
                 className="flex-row justify-center justify-space-between-md align-center"
