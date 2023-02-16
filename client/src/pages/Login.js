@@ -75,7 +75,7 @@ const Login = () => {
         Click here to Signup Instead
       </Link>
       </div>
-          <button type="submit" className=' w-40 btn btn-lg btn-primary'>
+          <button type="submit" className='w-40 btn btn-lg btn-primary'>
             Submit
           </button>
         </form>

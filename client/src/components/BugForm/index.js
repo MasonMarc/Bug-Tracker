@@ -56,7 +56,7 @@ const BugForm = () => {
                 className="flex-row justify-center justify-space-between-md align-center"
                 onSubmit={handleFormSubmit}
             >
-                <div className="col-12 col-lg-9">
+                <div className="col-12 col-lg-9 form-floating p-1">
                     <input
                         name='name'
                         placeholder="Add your Bug name"
@@ -66,7 +66,7 @@ const BugForm = () => {
                     />
                 </div>
 
-                <div className="col-12 col-lg-9">
+                <div className="col-12 col-lg-9 form-floating p-1">
                     <textarea
                         name='description'
                         placeholder="Add Bug description"
@@ -77,7 +77,7 @@ const BugForm = () => {
                 </div>
 
                 <div className="col-12 col-lg-3">
-                    <button className="btn btn-info btn-block py-3" type="submit">
+                    <button className="btn btn-info btn-block py-3 w-50 m-1" type="submit">
                         Add Bug
                     </button>
                 </div>

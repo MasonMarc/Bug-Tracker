@@ -18,7 +18,7 @@ const ProjectForm = () => {
             console.log({ name })
             // Execute mutation and pass in defined parameter data as variables
             const { data } = await addProject({
-                variables:  name ,
+                variables: name,
             });
 
             window.location.reload();
@@ -43,7 +43,7 @@ const ProjectForm = () => {
                 className="flex-row justify-center justify-space-between-md align-center"
                 onSubmit={handleFormSubmit}
             >
-                <div className="col-12 col-lg-9">
+                <div className="col-12 col-lg-9 form-floating p-1">
                     <input
                         name='name'
                         placeholder="Add your Project name..."
@@ -52,9 +52,8 @@ const ProjectForm = () => {
                         onChange={handleChange}
                     />
                 </div>
-
                 <div className="col-12 col-lg-3">
-                    <button className="btn btn-info btn-block py-3" type="submit">
+                    <button className="btn btn-info btn-block py-3 w-50 m-1" type="submit">
                         Add Project
                     </button>
                 </div>

@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 const Project = ({ _id, name }) => {
   return (
-    <div key={_id}>
+    <div key={_id} className="card p-3">
       <h4>
         <Link to={`/project/${_id}`}>
           {name}
@@ -24,11 +24,11 @@ const ProjectList = ({ projects, title }) => {
     return projects.map(project => <Project key={project._id} {...project} />);
   }
   return (
-<>
-        <h4 className="card-header bg-dark text-light p-2 m-0"> {title}
-        </h4>
-          {renderProjects()}
-</>
+    <>
+      <h4 className="card-header bg-dark text-light p-2 m-0"> {title}
+      </h4>
+      {renderProjects()}
+    </>
 
   );
 };
