@@ -55,14 +55,16 @@ const Profile = () => {
     if (error) return <p>Something went wrong</p>;
     if(user.projects[0]){
     return (
-      <div className='card w-25 p-5 m-auto'>
+      <div className='container w-100 m-auto text-center'>
+        <div className='card col-lg-12 col-md-6 p-5'>
         <h3>username: {user.username}</h3>
-      <ul className=''>
-        <li>email: {user.email}</li>
-        <li>Projects:<ul> {user.projects.map( (project) => {
+        <div className='d-flex justify-content-center flex-wrap align-items-center'>
+          <p><strong>Email:</strong> {user.email}</p>
+        <p><strong>Projects:</strong><ul> {user.projects.map( (project) => {
           return <li>{project.name}</li>;
-        })}</ul></li>
-      </ul>
+        })}</ul></p>
+      </div>
+      </div>
       </div>
     );
     } 

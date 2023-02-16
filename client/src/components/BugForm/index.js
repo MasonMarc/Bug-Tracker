@@ -46,17 +46,13 @@ const BugForm = () => {
 
 
     return (
-        <div className='p-3 m-auto d-block'>
-            <h3>Add a Bug</h3>
-            <p
-                className={`m-0 ${characterCount === 280 || error ? 'text-danger' : ''
-                    }`}
-            ></p>
+        <div className='form-signin w-100 m-auto p-5 text-center offset-lg-1'>
+            <h3 className='offset-lg-1'>Add a Bug</h3>
             <form
-                className="flex-row justify-center justify-space-between-md align-center"
+                className="flex-row justify-center align-center col-lg-6 offset-lg-5 text-center"
                 onSubmit={handleFormSubmit}
             >
-                <div className="col-12 col-lg-9 form-floating p-1">
+                <div className="col-12 col-lg-6 form-floating p-1">
                     <input
                         name='name'
                         placeholder="Add your Bug name"
@@ -66,7 +62,7 @@ const BugForm = () => {
                     />
                 </div>
 
-                <div className="col-12 col-lg-9 form-floating p-1">
+                <div className="col-12 col-lg-6 form-floating p-1">
                     <textarea
                         name='description'
                         placeholder="Add Bug description"
@@ -76,7 +72,7 @@ const BugForm = () => {
                     />
                 </div>
 
-                <div className="col-12 col-lg-3">
+                <div className="col-12 col-lg-6">
                     <button className="btn btn-info btn-block py-3 w-50 m-1" type="submit">
                         Add Bug
                     </button>

@@ -17,15 +17,15 @@ const Project = () => {
 
   return (
     <main>
-      <div className="flex-row justify-center">
+      <div className="flex-row justify-center w-100">
         <div
-          className="col-lg-12 col-md-10 p-3 w-100 ms-1"
+          className="col-lg-12 col-md-10 p-3"
           style={{ border: '1px dotted #1a1a1a' }}
         >
           <BugForm />
         </div>
 
-        <div className="col-12 col-md-10 my-3">
+        <div className="col-12 col-md-10 my-3 w-100">
           {loading ? (
             <div>Loading...</div>
           ) : (
