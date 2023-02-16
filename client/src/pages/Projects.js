@@ -11,6 +11,7 @@ const Projects = () => {
   const { loading, data } = useQuery(QUERY_PROJECTS);
   const projects = data?.projects || [];
 
+  
   return (
     <main>
       <div className="flex-row justify-center">

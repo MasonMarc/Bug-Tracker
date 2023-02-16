@@ -5,16 +5,16 @@ import Navbar from '../Navbar';
 const Header = () => {
   return (
     <header>
-      <div>
-        <Link to="/">
-          <h1>Home</h1>
+      {/* <div>
+        <Link to="/me">
+          <h1>Profile</h1>
         </Link>
       </div>
       <div>
         <Link to="/projects">
           <h1>Projects</h1>
         </Link>
-      </div>
+      </div> */}
       <div>
         <Navbar />
       </div>

@@ -45,7 +45,7 @@ const resolvers = {
       return await Project.findById({ _id: args.id }).populate('bugs').populate('user')
     },
     projectBugs: async (_, args, context) => {
-      const project = await Project.findById(args.id).sort({ _id: 1 }).populate('bugs')
+      const project = await Project.findById(args.id).sort({ createdAt: -1 }).populate('bugs')
       return project?.bugs || []
     },
   },

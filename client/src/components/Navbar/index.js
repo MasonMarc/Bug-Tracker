@@ -8,27 +8,52 @@ function Navbar() {
     event.preventDefault();
     Auth.logout();
   };
-  
+
   if (Auth.loggedIn()) {
     return (
-      <>
-        <Link to="/me">
-          {Auth.getProfile().data.username}'s profile
-        </Link>
-        <button onClick={logout}>
-          Logout
-        </button>
-      </>
+      <div className='container'>
+        <header className='d-flex flex-wrap justify-content-space-between  align-items-center py-3 mb-4 border-bottom'>
+          <a className='d-flex align-items-center mb-3 mb-md-0 me-md-auto text-dark text-decoration-none'>
+          <img src="/assets/pngaaa.com-134584(1).png" alt="Logo - Mantis Logo@seekpng.com" width={300}></img>
+          </a>
+          <ul className='nav nav-pills'>
+            <li className='nav-item'>
+              <Link to="/me" className='nav-link'>
+                <h1>Profile</h1>
+              </Link>
+            </li>
+            <li className='nav-item'>
+              <Link to="/projects" className='nav-link'>
+                <h1>Projects</h1>
+              </Link>
+            </li>
+            <li className='nav-item' className='nav-link'>
+              <button className=' w-40 btn btn-lg btn-primary'
+                onClick={logout}>
+                Logout
+              </button>
+            </li>
+          </ul>
+
+        </header>
+      </div>
     );
   }
   // If logged out show login controls
   return (
     <>
-      <Link to="/login">
+      <div>
+        <Link to="/login">
+          <h1>Profile</h1>
+        </Link>
+      </div>
+      <div>
+        <Link to="/login">
+          <h1>Projects</h1>
+        </Link>
+      </div>
+      <Link to="/login" className='h1 p-1'>
         Login
-      </Link>
-      <Link to="/signup">
-        Signup
       </Link>
     </>
   )
