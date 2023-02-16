@@ -4,6 +4,7 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import 'bootswatch/dist/minty/bootstrap.min.css';
+import './style.css';
 
 
 ReactDOM.render(

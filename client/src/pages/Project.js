@@ -19,7 +19,7 @@ const Project = () => {
     <main>
       <div className="flex-row justify-center">
         <div
-          className="col-12 col-md-10 mb-3 p-3"
+          className="col-lg-12 col-md-10 p-3 w-100 ms-1"
           style={{ border: '1px dotted #1a1a1a' }}
         >
           <BugForm />

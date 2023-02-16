@@ -38,13 +38,13 @@ const ProjectForm = () => {
 
     return (
         
-        <main className='form-signin w-100 m-auto p-5'>
-            <h3>Add a Project</h3>
+        <section className='form-signin w-100 m-auto p-5 text-center offset-lg-1'>
+            <h3 className='offset-lg-1'>Add a Project</h3>
             <form
-                className="flex-row justify-center justify-space-between-md align-center"
+                className="flex-row justify-center align-center col-lg-6 offset-lg-5 text-center"
                 onSubmit={handleFormSubmit}
             >
-                <div className="col-9 col-lg-6 form-floating p-1">
+                <div className="col-12 col-lg-6 form-floating p-1">
                     <input
                         name='name'
                         placeholder="Add your Project name..."
@@ -53,8 +53,8 @@ const ProjectForm = () => {
                         onChange={handleChange}
                     />
                 </div>
-                <div className="col-12 col-lg-3">
-                    <button className="btn btn-info btn-block py-3 w-50 m-1" type="submit">
+                <div className="col-12 col-lg-6">
+                    <button className="btn btn-info btn-block py-3 w-100 m-1" type="submit">
                         Add Project
                     </button>
                 </div>
@@ -64,7 +64,7 @@ const ProjectForm = () => {
                     </div>
                 )}
             </form>
-        </main>
+         </section>
     );
 };
 
